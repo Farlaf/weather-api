@@ -2,11 +2,12 @@
 
 require 'grape-swagger'
 
+# Root API class
 class RootAPI < Grape::API
-  format format_string :json
+  format :json
   prefix :api
 
-  helper do
+  helpers do
     def permitted_params
       @permitted_params ||= declared(params, included: false)
     end
