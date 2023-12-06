@@ -7,6 +7,7 @@ module V1
     CITY = 'miami'
 
     before do
+      binding.pry
       def client
         @client ||= ::AccueWeather::Client.new('weather api')
       end
@@ -19,9 +20,9 @@ module V1
     resource :weather do
       desc 'get current temperature'
       get '/current' do
-        result = client.current_temperature(uniq_id:)
-
-        present '200'
+        # result = client.current_temperature(uniq_id:)
+        #
+        # present '200'
       end
     end
   end

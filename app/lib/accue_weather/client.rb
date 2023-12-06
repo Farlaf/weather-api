@@ -14,7 +14,7 @@ module AccueWeather
 
     def uniq_id(city:)
       api_request(
-        url_with_path('locations/v1/cities/search'),
+        url_with_path('/locations/v1/cities/search'),
         ::AccueWeather::APIRequestFactory
           .new
           .uniq_id(city)
