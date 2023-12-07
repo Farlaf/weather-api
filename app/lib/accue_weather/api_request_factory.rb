@@ -14,6 +14,10 @@ module AccueWeather
       generic_request
     end
 
+    def historical_temperature
+      generic_request
+    end
+
     private
 
     def generic_request

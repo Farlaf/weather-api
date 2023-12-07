@@ -23,6 +23,18 @@ module V1
 
         present city: CITY, text: result.weather_text, temperature: result.temperature
       end
+
+      namespace :historical do
+        desc 'hourly temperature for the last 24h'
+        get '/' do
+          result = client.historical_temperature(uniq_id:)
+
+          present result.temperature_24_h
+        end
+      end
     end
+
+
+
   end
 end
