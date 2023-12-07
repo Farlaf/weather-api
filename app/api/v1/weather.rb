@@ -17,7 +17,7 @@ module V1
     end
 
     resource :weather do
-      desc 'get current temperature'
+      desc 'Get current temperature'
       get '/current' do
         result = client.current_temperature(uniq_id:)
 
@@ -25,11 +25,32 @@ module V1
       end
 
       namespace :historical do
-        desc 'hourly temperature for the last 24h'
+        desc 'Hourly temperature for the last 24h'
         get '/' do
           result = client.historical_temperature(uniq_id:)
 
           present result.temperature_24_h
+        end
+
+        desc 'Max temperature in the last 24h'
+        get '/max' do
+          result = client.historical_temperature(uniq_id:)
+
+          present result.max_temperature_24_h
+        end
+
+        desc 'Min temperature in the last 24h'
+        get '/min' do
+          result = client.historical_temperature(uniq_id:)
+
+          present result.min_temperature_24_h
+        end
+
+        desc 'Average temperature in the last 24h'
+        get '/avg' do
+          result = client.historical_temperature(uniq_id:)
+
+          present result.avg_temperature_24_h
         end
       end
     end

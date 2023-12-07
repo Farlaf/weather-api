@@ -29,16 +29,16 @@
     <tr>
       <th scope="row">3</th>
       <td>
-        <%= button_to 'Min temperature in the last 24h',
-                      '/api/v1/weather/historical/min',
+        <%= button_to 'Max temperature in the last 24h',
+                      '/api/v1/weather/historical/max',
                       method: :get %>
       </td>
     </tr>
     <tr>
       <th scope="row">4</th>
       <td>
-        <%= button_to 'Max temperature in the last 24h',
-                      '/api/v1/weather/historical/max',
+        <%= button_to 'Min temperature in the last 24h',
+                      '/api/v1/weather/historical/min',
                       method: :get %>
       </td>
     </tr>
@@ -53,21 +53,13 @@
     <tr>
       <th scope="row">6</th>
       <td>
-        <%= button_to 'Avg temperature in the last 24h',
-                      '/api/v1/weather/historical/avg',
-                      method: :get %>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">7</th>
-      <td>
         <%= button_to 'Backend status',
                       '/api/v1/health',
                       method: :get %>
       </td>
     </tr>
     <tr>
-      <th scope="row">8</th>
+      <th scope="row">7</th>
       <td>
         <%= button_to 'Documentation',
                       '/api/v1/docs',
