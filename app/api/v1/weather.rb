@@ -4,10 +4,9 @@
 module V1
   # Weather API
   class Weather < Grape::API
-    CITY = 'miami'
+    CITY = 'batumi'
 
     before do
-      binding.pry
       def client
         @client ||= ::AccueWeather::Client.new('weather api')
       end
@@ -20,9 +19,9 @@ module V1
     resource :weather do
       desc 'get current temperature'
       get '/current' do
-        # result = client.current_temperature(uniq_id:)
-        #
-        # present '200'
+        result = client.current_temperature(uniq_id:)
+
+        present city: CITY, text: result.weather_text, temperature: result.temperature
       end
     end
   end
