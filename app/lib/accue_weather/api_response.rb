@@ -47,6 +47,5 @@ module AccueWeather
 
       (array.instance_eval { reduce(:+) / size.to_f }).round(2)
     end
-
   end
 end

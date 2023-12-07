@@ -13,5 +13,4 @@ describe ::V1::Backend do
       is_expected.to be_successful
     end
   end
-
 end
